@@ -12,7 +12,7 @@ Patch1:		%{name}-mint.patch
 URL:		http://www.mono-project.com/
 ExcludeArch:	alpha
 BuildRequires:	autoconf
-BuildRequires:	automake >= 1.7
+BuildRequires:	automake >= 1:1.7
 BuildRequires:	dotnet-gtk-sharp-devel >= 0.93
 BuildRequires:	gtksourceview-devel >= 1.0.1
 BuildRequires:	libtool
