@@ -26,11 +26,15 @@ GNOME2.
 
 %package devel
 Summary:	Development part of GtkSourceView#
+Summary(pl):	Czê¶æ GtkSourceView# przeznaczona dla programistów
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 
 %description devel
 Development part of GtkSourceView#.
+
+%description devel -l pl
+Czê¶æ GtkSourceView# przeznaczona dla programistów.
 
 %prep
 %setup -q -n %{name}-%{_snap}
