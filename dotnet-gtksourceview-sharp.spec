@@ -2,7 +2,7 @@ Summary:	.NET language bindings for GtkSourceView
 Summary(pl):	Wi±zania GtkSourceView dla .NET
 Name:		dotnet-gtksourceview-sharp
 Version:	0.5
-Release:	3
+Release:	4
 License:	LGPL
 Group:		Development/Libraries
 Source0:	http://mono2.ximian.com/archive/1.0/gtksourceview-sharp-%{version}.tar.gz
@@ -72,7 +72,7 @@ install -d $RPM_BUILD_ROOT`monodoc --get-sourcesdir`
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 # already in main package
-rm -f $RPM_BUILD_ROOT%{_datadir}/gtksourceview-1.0/language-specs/csharp.lang
+rm -f $RPM_BUILD_ROOT%{_datadir}/gtksourceview-1.0/language-specs/{csharp,vbnet}.lang
 
 %clean
 rm -rf $RPM_BUILD_ROOT
