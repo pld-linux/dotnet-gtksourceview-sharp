@@ -75,6 +75,7 @@ rm -rf $RPM_BUILD_ROOT
 %files devel
 %defattr(644,root,root,755)
 %doc ChangeLog AUTHORS
+%{_libdir}/mono/gtk-sharp/*
 %{_libdir}/monodoc/sources/*
 %{_datadir}/gapi/*
 %{_pkgconfigdir}/*
