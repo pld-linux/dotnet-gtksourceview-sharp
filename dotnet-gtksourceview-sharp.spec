@@ -1,24 +1,26 @@
 Summary:	.NET language bindings for GtkSourceView
 Summary(pl):	Wi±zania GtkSourceView dla .NET
-Name:		dotnet-gtksourceview
-Version:	0.2
+Name:		dotnet-gtksourceview-sharp
+Version:	0.3
 Release:	1
 License:	LGPL
 Group:		Development/Libraries
-Source0:	http://www.go-mono.com/archive/gtksourceview-sharp-%{version}.tar.gz
-# Source0-md5:	0eed28f53e016a53a911933c874c5f4a
+Source0:	http://www.go-mono.com/archive/beta2/gtksourceview-sharp-%{version}.tar.gz
+# Source0-md5:	ff01bdd500a4c446d008e80e18b5588e
 BuildRequires:	autoconf
 BuildRequires:	automake >= 1.7
-BuildRequires:	dotnet-gtk-devel >= 0.91
+BuildRequires:	dotnet-gtk-sharp-devel >= 0.93
 BuildRequires:	gtksourceview-devel >= 1.0.1
 BuildRequires:	libtool
-BuildRequires:	monodoc >= 0.15
+BuildRequires:	monodoc >= 0.16
 BuildRequires:	mono-csharp
-BuildRequires:	mono-devel >= 0.91
-Requires:	gtksourceview >= 0.1.0
-Requires:	dotnet-gtk
+BuildRequires:	mono-devel >= 0.95
+Requires:	gtksourceview >= 1.0.1
+Requires:	dotnet-gtk-sharp
 Provides:	gtksourceview-sharp
 Obsoletes:	gtksourceview-sharp
+Provides:	dotnet-gtksourceview
+Obsoletes:	dotnet-gtksourceview
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -35,6 +37,8 @@ Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Provides:	gtksourceview-sharp-devel
 Obsoletes:	gtksourceview-sharp-devel
+Provides:	dotnet-gtksourceview-devel
+Obsoletes:	dotnet-gtksourceview-devel
 
 %description devel
 Development part of GtkSourceView#.
@@ -78,6 +82,5 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc ChangeLog AUTHORS
 %{_libdir}/mono/gtk-sharp/*
-%{_libdir}/monodoc/sources/*
 %{_datadir}/gapi/*
 %{_pkgconfigdir}/*
