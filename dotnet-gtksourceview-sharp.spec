@@ -8,6 +8,8 @@ Group:		Development/Libraries
 Source0:	http://mono2.ximian.com/archive/1.0/gtksourceview-sharp-%{version}.tar.gz
 # Source0-md5:	b82e767e42a542e185a534048db3078d
 Patch0:		%{name}-install.patch
+Patch1:		%{name}-mint.patch
+URL:		http://www.mono-project.com/
 BuildRequires:	autoconf
 BuildRequires:	automake >= 1.7
 BuildRequires:	dotnet-gtk-sharp-devel >= 0.93
@@ -50,6 +52,7 @@ Czê¶æ GtkSourceView# przeznaczona dla programistów.
 %prep
 %setup -q -n gtksourceview-sharp-%{version}
 %patch0 -p1
+%patch1 -p1
 sed -i -e 's/`monodoc --get-sourcesdir`/$(DESTDIR)&/' doc/Makefile.am
 sed -i -e 's/apidir = $(DESTDIR)@gtk/apidir = @gtk/' gtksourceview/makefile.am
 
