@@ -36,7 +36,7 @@ diff -Nuard gtksourceview-sharp-0.5.orig/configure.in gtksourceview-sharp-0.5/co
 -if test x$CSC = "xno"; then
 -    AC_MSG_ERROR([You need to install either mono or .Net])
 +    if test `uname -s` = "Darwin"; then
-+	AC_PATH_PROG(RUNTIME, mint, no)
++	AC_PATH_PROG(RUNTIME, mono, no)
 +	AC_PATH_PROG(CSC, mcs, no)
 +	LIB_PREFIX=
 +	LIB_SUFFIX=.dylib
