@@ -1,13 +1,12 @@
-%define _snap 20040228
 Summary:	.NET language bindings for GtkSourceView
 Summary(pl):	Wi±zania GtkSourceView dla .NET
 Name:		gtksourceview-sharp
 Version:	0.1.0
-Release:	0.%{_snap}
+Release:	1
 License:	LGPL
 Group:		Development/Libraries
-Source0:	%{name}-%{_snap}.tar.bz2
-# Source0-md5:	89860497088518bd92c0966912e8c9e4
+Source0:	http://www.go-mono.com/archive/%{name}-%{version}.tar.gz
+# Source0-md5:	c7bf339a41c80934a31f79f0717e2f0f
 BuildRequires:	autoconf
 BuildRequires:	automake >= 1.7
 BuildRequires:	gtk-sharp-devel >= 0.17
@@ -37,7 +36,7 @@ Development part of GtkSourceView#.
 Czê¶æ GtkSourceView# przeznaczona dla programistów.
 
 %prep
-%setup -q -n %{name}-%{_snap}
+%setup -q
 
 %build
 rm -rf autom4te.cache
