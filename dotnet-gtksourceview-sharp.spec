@@ -1,12 +1,13 @@
 Summary:	.NET language bindings for GtkSourceView
 Summary(pl):	Wi±zania GtkSourceView dla .NET
 Name:		dotnet-gtksourceview-sharp
-Version:	0.3
+Version:	0.5
 Release:	1
 License:	LGPL
 Group:		Development/Libraries
-Source0:	http://www.go-mono.com/archive/beta2/gtksourceview-sharp-%{version}.tar.gz
-# Source0-md5:	ff01bdd500a4c446d008e80e18b5588e
+Source0:	http://mono2.ximian.com/archive/1.0/gtksourceview-sharp-%{version}.tar.gz
+# Source0-md5:	b82e767e42a542e185a534048db3078d
+Patch0:		%{name}-install.patch
 BuildRequires:	autoconf
 BuildRequires:	automake >= 1.7
 BuildRequires:	dotnet-gtk-sharp-devel >= 0.93
@@ -48,6 +49,7 @@ Czê¶æ GtkSourceView# przeznaczona dla programistów.
 
 %prep
 %setup -q -n gtksourceview-sharp-%{version}
+%patch0 -p1
 sed -i -e 's/`monodoc --get-sourcesdir`/$(DESTDIR)&/' doc/Makefile.am
 sed -i -e 's/apidir = $(DESTDIR)@gtk/apidir = @gtk/' gtksourceview/makefile.am
 
@@ -84,3 +86,4 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/mono/gtk-sharp/*
 %{_datadir}/gapi/*
 %{_pkgconfigdir}/*
+%{_libdir}/monodoc/sources/gtksourceview-sharp-docs.*
