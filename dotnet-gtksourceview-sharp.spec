@@ -16,8 +16,7 @@ BuildRequires:	dotnet-gtk-sharp-devel >= 0.93
 BuildRequires:	gtksourceview-devel >= 1.0.1
 BuildRequires:	libtool
 BuildRequires:	monodoc >= 0.16
-BuildRequires:	mono-csharp
-BuildRequires:	mono-devel >= 0.95
+BuildRequires:	mono-csharp >= 0.95
 Requires:	gtksourceview >= 1.0.1
 Requires:	dotnet-gtk-sharp
 Provides:	gtksourceview-sharp
