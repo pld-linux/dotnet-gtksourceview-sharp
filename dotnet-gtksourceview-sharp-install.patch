@@ -1,6 +1,6 @@
 diff -Nuard gtksourceview-sharp-0.5.orig/configure.in gtksourceview-sharp-0.5/configure.in
 --- gtksourceview-sharp-0.5.orig/configure.in	2004-06-29 21:13:06.000000000 +0200
-+++ gtksourceview-sharp-0.5/configure.in	2004-07-03 22:43:07.249377528 +0200
++++ gtksourceview-sharp-0.5/configure.in	2004-07-04 09:12:09.971542680 +0200
 @@ -57,7 +57,7 @@
  	AC_MSG_ERROR([No gacutil tool found])
  fi
@@ -10,9 +10,20 @@ diff -Nuard gtksourceview-sharp-0.5.orig/configure.in gtksourceview-sharp-0.5/co
                                       
  AC_SUBST(RUNTIME)
  AC_SUBST(CSC)
+diff -Nuard gtksourceview-sharp-0.5.orig/gtksourceview-sharp.pc.in gtksourceview-sharp-0.5/gtksourceview-sharp.pc.in
+--- gtksourceview-sharp-0.5.orig/gtksourceview-sharp.pc.in	2004-06-29 21:26:33.000000000 +0200
++++ gtksourceview-sharp-0.5/gtksourceview-sharp.pc.in	2004-07-04 09:12:23.550478368 +0200
+@@ -1,6 +1,6 @@
+ prefix=@prefix@
+ exec_prefix=${prefix}
+-libdir=${exec_prefix}/lib
++libdir=@libdir@
+ 
+ 
+ Name: GtkSourceView#
 diff -Nuard gtksourceview-sharp-0.5.orig/makefile.am gtksourceview-sharp-0.5/makefile.am
 --- gtksourceview-sharp-0.5.orig/makefile.am	2004-06-26 23:39:15.000000000 +0200
-+++ gtksourceview-sharp-0.5/makefile.am	2004-07-03 22:43:25.506602008 +0200
++++ gtksourceview-sharp-0.5/makefile.am	2004-07-04 09:12:09.971542680 +0200
 @@ -5,7 +5,7 @@
  extra_langdir= @gtksourceview_prefix@/share/gtksourceview-1.0/language-specs
  extra_lang_DATA=	nemerle.lang vbnet.lang
