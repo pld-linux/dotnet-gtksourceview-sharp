@@ -1,20 +1,24 @@
 Summary:	.NET language bindings for GtkSourceView
 Summary(pl):	Wi±zania GtkSourceView dla .NET
-Name:		gtksourceview-sharp
-Version:	0.1.0
-Release:	2
+Name:		dotnet-gtksourceview
+Version:	0.2
+Release:	1
 License:	LGPL
 Group:		Development/Libraries
-Source0:	http://www.go-mono.com/archive/%{name}-%{version}.tar.gz
-# Source0-md5:	c7bf339a41c80934a31f79f0717e2f0f
+Source0:	http://www.go-mono.com/archive/gtksourceview-sharp-%{version}.tar.gz
+# Source0-md5:	0eed28f53e016a53a911933c874c5f4a
 BuildRequires:	autoconf
 BuildRequires:	automake >= 1.7
-BuildRequires:	gtk-sharp-devel >= 0.17
+BuildRequires:	dotnet-gtk-devel >= 0.91
 BuildRequires:	gtksourceview-devel >= 0.1.0
 BuildRequires:	libtool
+BuildRequires:	monodoc >= 0.15
 BuildRequires:	mono-csharp
-BuildRequires:  mono-devel
+BuildRequires:  mono-devel >= 0.91
 Requires:	gtksourceview >= 0.1.0
+Requires:	dotnet-gtk
+Provides:	gtksourceview-sharp
+Obsoletes:	gtksourceview-sharp
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -29,6 +33,8 @@ Summary:	Development part of GtkSourceView#
 Summary(pl):	Czê¶æ GtkSourceView# przeznaczona dla programistów
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
+Provides:	gtksourceview-sharp-devel
+Obsoletes:	gtksourceview-sharp-devel
 
 %description devel
 Development part of GtkSourceView#.
@@ -37,7 +43,9 @@ Development part of GtkSourceView#.
 Czê¶æ GtkSourceView# przeznaczona dla programistów.
 
 %prep
-%setup -q
+%setup -q -n gtksourceview-sharp-%{version}
+sed -i -e 's/`monodoc --get-sourcesdir`/$(DESTDIR)&/' doc/Makefile.am
+sed -i -e 's/apidir = $(DESTDIR)@gtk/apidir = @gtk/' gtksourceview/makefile.am
 
 %build
 rm -rf autom4te.cache
@@ -50,6 +58,7 @@ rm -rf autom4te.cache
 
 %install
 rm -rf $RPM_BUILD_ROOT
+install -d $RPM_BUILD_ROOT`monodoc --get-sourcesdir`
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
@@ -59,11 +68,13 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%{_libdir}/*.dll
+%{_libdir}/mono/gac/*
 %{_datadir}/mime-info/*
+%{_datadir}/gtksourceview-1.0/language-specs/*
 
 %files devel
 %defattr(644,root,root,755)
 %doc ChangeLog AUTHORS
+%{_libdir}/monodoc/sources/*
 %{_datadir}/gapi/*
 %{_pkgconfigdir}/*
