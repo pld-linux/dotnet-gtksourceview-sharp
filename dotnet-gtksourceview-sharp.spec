@@ -10,7 +10,7 @@ Source0:	http://www.go-mono.com/archive/gtksourceview-sharp-%{version}.tar.gz
 BuildRequires:	autoconf
 BuildRequires:	automake >= 1.7
 BuildRequires:	dotnet-gtk-devel >= 0.91
-BuildRequires:	gtksourceview-devel >= 0.1.0
+BuildRequires:	gtksourceview-devel >= 1.0.1
 BuildRequires:	libtool
 BuildRequires:	monodoc >= 0.15
 BuildRequires:	mono-csharp
@@ -62,6 +62,8 @@ install -d $RPM_BUILD_ROOT`monodoc --get-sourcesdir`
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
+# already in main package
+rm -f $RPM_BUILD_ROOT%{_datadir}/gtksourceview-1.0/language-specs/csharp.lang
 
 %clean
 rm -rf $RPM_BUILD_ROOT
