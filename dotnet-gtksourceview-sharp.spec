@@ -1,25 +1,24 @@
 Summary:	.NET language bindings for GtkSourceView
 Summary(pl):	Wi±zania GtkSourceView dla .NET
 Name:		dotnet-gtksourceview-sharp
-Version:	0.5
-Release:	5
+Version:	0.7
+Release:	1
 License:	LGPL
 Group:		Development/Libraries
-Source0:	http://mono2.ximian.com/archive/1.0/gtksourceview-sharp-%{version}.tar.gz
-# Source0-md5:	b82e767e42a542e185a534048db3078d
+Source0:	http://mono2.ximian.com/archive/1.1.5/gtksourceview-sharp-%{version}.tar.gz
+# Source0-md5:	9a59c277ba8239259d34749bd63a8031
 Patch0:		%{name}-install.patch
-Patch1:		%{name}-mint.patch
 URL:		http://www.mono-project.com/
 ExcludeArch:	alpha
 BuildRequires:	autoconf
 BuildRequires:	automake >= 1:1.7
-BuildRequires:	dotnet-gtk-sharp-devel >= 0.93
+BuildRequires:	dotnet-gtk-sharp-devel >= 1.9.3
 BuildRequires:	gtksourceview-devel >= 1.0.1
 BuildRequires:	libtool
 BuildRequires:	monodoc >= 0.16
-BuildRequires:	mono-csharp >= 0.95
+BuildRequires:	mono-csharp >= 1.1.6
 Requires:	gtksourceview >= 1.0.1
-Requires:	dotnet-gtk-sharp
+Requires:	dotnet-gtk-sharp >= 1.9.3
 Provides:	gtksourceview-sharp
 Obsoletes:	gtksourceview-sharp
 Provides:	dotnet-gtksourceview
@@ -53,9 +52,6 @@ Czê¶æ GtkSourceView# przeznaczona dla programistów.
 %prep
 %setup -q -n gtksourceview-sharp-%{version}
 %patch0 -p1
-%patch1 -p1
-sed -i -e 's/`monodoc --get-sourcesdir`/$(DESTDIR)&/' doc/Makefile.am
-sed -i -e 's/apidir = $(DESTDIR)@gtk/apidir = @gtk/' gtksourceview/makefile.am
 
 %build
 rm -rf autom4te.cache
@@ -73,7 +69,7 @@ install -d $RPM_BUILD_ROOT`monodoc --get-sourcesdir`
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 # already in main package
-rm -f $RPM_BUILD_ROOT%{_datadir}/gtksourceview-1.0/language-specs/{csharp,vbnet}.lang
+rm -f $RPM_BUILD_ROOT%{_datadir}/gtksourceview-1.0/language-specs/{csharp,nemerle,vbnet}.lang
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -81,13 +77,10 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %{_libdir}/mono/gac/*
-%{_datadir}/mime-info/*
-%{_datadir}/gtksourceview-1.0/language-specs/*
 
 %files devel
 %defattr(644,root,root,755)
 %doc ChangeLog AUTHORS
-%{_libdir}/mono/gtk-sharp/*
-%{_datadir}/gapi/*
+%{_datadir}/gapi-2.0/*
 %{_pkgconfigdir}/*
-%{_libdir}/monodoc/sources/gtksourceview-sharp-docs.*
+%{_libdir}/monodoc/sources/gtksourceview-sharp-*
