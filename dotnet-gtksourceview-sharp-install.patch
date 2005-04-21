@@ -1,35 +1,12 @@
-diff -Nuard gtksourceview-sharp-0.5.orig/configure.in gtksourceview-sharp-0.5/configure.in
---- gtksourceview-sharp-0.5.orig/configure.in	2004-06-29 21:13:06.000000000 +0200
-+++ gtksourceview-sharp-0.5/configure.in	2004-07-04 09:12:09.971542680 +0200
-@@ -57,7 +57,7 @@
+diff -aurN gtksourceview-sharp-0.7.orig/configure.in gtksourceview-sharp-0.7/configure.in
+--- gtksourceview-sharp-0.7.orig/configure.in	2005-03-12 10:54:22.000000000 +0100
++++ gtksourceview-sharp-0.7/configure.in	2005-04-21 20:38:55.000000000 +0200
+@@ -55,7 +55,7 @@
  	AC_MSG_ERROR([No gacutil tool found])
  fi
  
--GACUTIL_FLAGS='/package gtk-sharp /gacdir $(libdir)'
-+GACUTIL_FLAGS='/package gtk-sharp /root $(DESTDIR)$(libdir)'
+-GACUTIL_FLAGS='/package gtksourceview-sharp /gacdir $(libdir)'
++GACUTIL_FLAGS='/package gtksourceview-sharp /root $(DESTDIR)$(libdir)'
                                       
  AC_SUBST(RUNTIME)
  AC_SUBST(CSC)
-diff -Nuard gtksourceview-sharp-0.5.orig/gtksourceview-sharp.pc.in gtksourceview-sharp-0.5/gtksourceview-sharp.pc.in
---- gtksourceview-sharp-0.5.orig/gtksourceview-sharp.pc.in	2004-06-29 21:26:33.000000000 +0200
-+++ gtksourceview-sharp-0.5/gtksourceview-sharp.pc.in	2004-07-04 09:12:23.550478368 +0200
-@@ -1,6 +1,6 @@
- prefix=@prefix@
- exec_prefix=${prefix}
--libdir=${exec_prefix}/lib
-+libdir=@libdir@
- 
- 
- Name: GtkSourceView#
-diff -Nuard gtksourceview-sharp-0.5.orig/makefile.am gtksourceview-sharp-0.5/makefile.am
---- gtksourceview-sharp-0.5.orig/makefile.am	2004-06-26 23:39:15.000000000 +0200
-+++ gtksourceview-sharp-0.5/makefile.am	2004-07-04 09:12:09.971542680 +0200
-@@ -5,7 +5,7 @@
- extra_langdir= @gtksourceview_prefix@/share/gtksourceview-1.0/language-specs
- extra_lang_DATA=	nemerle.lang vbnet.lang
- 
--pkgconfigdir = @prefix@/lib/pkgconfig
-+pkgconfigdir = @libdir@/pkgconfig
- pkgconfig_DATA = gtksourceview-sharp.pc
- 
- # should be the same as the gnome prefix
