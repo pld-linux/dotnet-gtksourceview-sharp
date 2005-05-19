@@ -1,12 +1,11 @@
-diff -aurN gtksourceview-sharp-0.7.orig/configure.in gtksourceview-sharp-0.7/configure.in
---- gtksourceview-sharp-0.7.orig/configure.in	2005-03-12 10:54:22.000000000 +0100
-+++ gtksourceview-sharp-0.7/configure.in	2005-04-21 20:38:55.000000000 +0200
-@@ -55,7 +55,7 @@
+--- gtksourceview-sharp-2.0-0.10/configure.in.orig	2005-05-14 22:19:45.000000000 +0200
++++ gtksourceview-sharp-2.0-0.10/configure.in	2005-05-19 16:18:16.000000000 +0200
+@@ -54,7 +54,7 @@
  	AC_MSG_ERROR([No gacutil tool found])
  fi
  
--GACUTIL_FLAGS='/package gtksourceview-sharp /gacdir $(libdir)'
-+GACUTIL_FLAGS='/package gtksourceview-sharp /root $(DESTDIR)$(libdir)'
+-GACUTIL_FLAGS='/package gtksourceview-sharp-2.0 /root $(DESTDIR)$(prefix)/lib'
++GACUTIL_FLAGS='/package gtksourceview-sharp-2.0 /root $(DESTDIR)$(libdir)'
                                       
  AC_SUBST(RUNTIME)
  AC_SUBST(CSC)
