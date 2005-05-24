@@ -68,8 +68,18 @@ install -d $RPM_BUILD_ROOT`monodoc --get-sourcesdir`
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
+
+if test -f $RPM_BUILD_ROOT%{_pkgconfigdir} ; then
+  :
+else
+  install -d $RPM_BUILD_ROOT%{_pkgconfigdir}
+  mv $RPM_BUILD_ROOT/usr/lib/pkgconfig/* $RPM_BUILD_ROOT%{_pkgconfigdir}
+fi
+
+
 # already in main package
 rm -f $RPM_BUILD_ROOT%{_datadir}/gtksourceview-1.0/language-specs/{csharp,nemerle,vbnet}.lang
+
 
 %clean
 rm -rf $RPM_BUILD_ROOT
