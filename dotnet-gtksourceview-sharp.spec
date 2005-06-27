@@ -17,6 +17,7 @@ BuildRequires:	gtksourceview-devel >= 1.0.1
 BuildRequires:	libtool
 BuildRequires:	monodoc >= 0.16
 BuildRequires:	mono-csharp >= 1.1.6
+BuildRequires:	pkgconfig
 Requires:	gtksourceview >= 1.0.1
 Requires:	dotnet-gtk-sharp >= 1.9.3
 Provides:	gtksourceview-sharp
@@ -69,7 +70,7 @@ install -d $RPM_BUILD_ROOT`monodoc --get-sourcesdir`
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-if test -f $RPM_BUILD_ROOT%{_pkgconfigdir} ; then
+if test -d $RPM_BUILD_ROOT%{_pkgconfigdir} ; then
   :
 else
   install -d $RPM_BUILD_ROOT%{_pkgconfigdir}
