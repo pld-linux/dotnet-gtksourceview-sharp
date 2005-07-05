@@ -95,4 +95,4 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/gapi-2.0/*
 %{_pkgconfigdir}/*
 %{_libdir}/monodoc/sources/gtksourceview-sharp-*
-%{_libdir}/mono/gtksourceview-sharp-2.0/*
+%{_libdir}/mono/gtksourceview-sharp-2.0
