@@ -13,6 +13,7 @@ ExcludeArch:	alpha
 BuildRequires:	autoconf
 BuildRequires:	automake >= 1:1.7
 BuildRequires:	dotnet-gtk-sharp-devel >= 1.9.3
+BuildRequires:	dotnet-gtk-sharp-gnome-devel >= 1.9.3
 BuildRequires:	gtksourceview-devel >= 1.0.1
 BuildRequires:	libtool
 BuildRequires:	monodoc >= 0.16
