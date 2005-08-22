@@ -1,3 +1,4 @@
+%include	/usr/lib/rpm/macros.mono
 Summary:	.NET language bindings for GtkSourceView
 Summary(pl):	Wi±zania GtkSourceView dla .NET
 Name:		dotnet-gtksourceview-sharp
@@ -12,15 +13,13 @@ URL:		http://www.mono-project.com/
 ExcludeArch:	alpha
 BuildRequires:	autoconf
 BuildRequires:	automake >= 1:1.7
-BuildRequires:	dotnet-gtk-sharp-devel >= 1.9.3
-BuildRequires:	dotnet-gtk-sharp-gnome-devel >= 1.9.3
+BuildRequires:	dotnet-gtk-sharp2-gnome-devel >= 1.9.3
 BuildRequires:	gtksourceview-devel >= 1.0.1
 BuildRequires:	libtool
 BuildRequires:	monodoc >= 0.16
 BuildRequires:	mono-csharp >= 1.1.6
 BuildRequires:	pkgconfig
 Requires:	gtksourceview >= 1.0.1
-Requires:	dotnet-gtk-sharp >= 1.9.3
 Provides:	gtksourceview-sharp
 Obsoletes:	gtksourceview-sharp
 Provides:	dotnet-gtksourceview
