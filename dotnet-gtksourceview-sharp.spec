@@ -2,7 +2,7 @@ Summary:	.NET language bindings for GtkSourceView
 Summary(pl):	Wi±zania GtkSourceView dla .NET
 Name:		dotnet-gtksourceview-sharp
 Version:	0.5
-Release:	6
+Release:	7
 License:	LGPL
 Group:		Libraries
 Source0:	http://mono2.ximian.com/archive/1.0/gtksourceview-sharp-%{version}.tar.gz
@@ -26,6 +26,7 @@ Provides:	dotnet-gtksourceview
 Provides:	gtksourceview-sharp
 Obsoletes:	dotnet-gtksourceview
 Obsoletes:	gtksourceview-sharp
+ExcludeArch:	alpha i386 sparc sparc64
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
