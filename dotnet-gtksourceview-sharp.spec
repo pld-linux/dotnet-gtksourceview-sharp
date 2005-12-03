@@ -29,11 +29,10 @@ ExcludeArch:	alpha i386 sparc sparc64
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-This package provides bindings for .NET to Gtk+2 and GNOME2 libraries.
+This package provides .NET bindings for GtkSourceView library.
 
 %description -l pl
-Pakiet ten dostarcza wi±zania dla .NET do bibliotek z Gtk+2 oraz
-GNOME2.
+Pakiet ten dostarcza wi±zania .NET do biblioteki GtkSourceView.
 
 %package devel
 Summary:	Development part of GtkSourceView#
