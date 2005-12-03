@@ -2,7 +2,7 @@ Summary:	.NET language bindings for GtkSourceView
 Summary(pl):	Wi±zania GtkSourceView dla .NET
 Name:		dotnet-gtksourceview-sharp
 Version:	0.5
-Release:	8
+Release:	9
 License:	LGPL
 Group:		Libraries
 Source0:	http://mono2.ximian.com/archive/1.0/gtksourceview-sharp-%{version}.tar.gz
@@ -16,11 +16,11 @@ BuildRequires:	dotnet-gtk-sharp-gnome-devel >= 0.93
 BuildRequires:	gtksourceview-devel >= 1.0.1
 BuildRequires:	libtool
 BuildRequires:	monodoc >= 0.16
-BuildRequires:	mono-csharp >= 0.96
+BuildRequires:	mono-csharp >= 1.1.7
 BuildRequires:	pkgconfig
 Requires:	dotnet-gtk-sharp >= 0.93
 Requires:	gtksourceview >= 1.0.1
-Requires:	mono >= 0.96
+Requires:	mono >= 1.1.7
 Provides:	dotnet-gtksourceview
 Provides:	gtksourceview-sharp
 Obsoletes:	dotnet-gtksourceview
@@ -59,7 +59,6 @@ sed -i -e 's/`monodoc --get-sourcesdir`/$(DESTDIR)&/' doc/Makefile.am
 sed -i -e 's/apidir = $(DESTDIR)@gtk/apidir = @gtk/' gtksourceview/makefile.am
 
 %build
-rm -rf autom4te.cache
 %{__libtoolize}
 %{__aclocal}
 %{__automake}
@@ -82,13 +81,13 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog
-%{_libdir}/mono/gac/*
+%{_prefix}/lib/mono/gac/*
 %{_datadir}/mime-info/*
 %{_datadir}/gtksourceview-1.0/language-specs/*
 
 %files devel
 %defattr(644,root,root,755)
-%{_libdir}/mono/gtk-sharp/*
+%{_prefix}/lib/mono/gtk-sharp/*
 %{_datadir}/gapi/*
 %{_pkgconfigdir}/*
 %{_libdir}/monodoc/sources/gtksourceview-sharp-docs.*
