@@ -1,5 +1,5 @@
 Summary:	.NET language bindings for GtkSourceView
-Summary(pl.UTF-8):   Wiązania GtkSourceView dla .NET
+Summary(pl.UTF-8):	Wiązania GtkSourceView dla .NET
 Name:		dotnet-gtksourceview-sharp
 Version:	0.5
 Release:	10
@@ -36,7 +36,7 @@ Pakiet ten dostarcza wiązania .NET do biblioteki GtkSourceView.
 
 %package devel
 Summary:	Development part of GtkSourceView#
-Summary(pl.UTF-8):   Część GtkSourceView# przeznaczona dla programistów
+Summary(pl.UTF-8):	Część GtkSourceView# przeznaczona dla programistów
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	dotnet-gtk-sharp-devel >= 0.93
