@@ -1,6 +1,6 @@
 %include	/usr/lib/rpm/macros.mono
 Summary:	.NET language bindings for GtkSourceView
-Summary(pl):	Wi±zania GtkSourceView dla .NET
+Summary(pl.UTF-8):   WiÄ…zania GtkSourceView dla .NET
 Name:		dotnet-gtksourceview-sharp
 Version:	0.10
 Release:	1
@@ -30,13 +30,13 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 This package provides bindings for .NET to Gtk+2 and GNOME2 libraries.
 
-%description -l pl
-Pakiet ten dostarcza wi±zania dla .NET do bibliotek z Gtk+2 oraz
+%description -l pl.UTF-8
+Pakiet ten dostarcza wiÄ…zania dla .NET do bibliotek z Gtk+2 oraz
 GNOME2.
 
 %package devel
 Summary:	Development part of GtkSourceView#
-Summary(pl):	Czê¶æ GtkSourceView# przeznaczona dla programistów
+Summary(pl.UTF-8):   CzÄ™Å›Ä‡ GtkSourceView# przeznaczona dla programistÃ³w
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Provides:	gtksourceview-sharp-devel
@@ -47,8 +47,8 @@ Obsoletes:	dotnet-gtksourceview-devel
 %description devel
 Development part of GtkSourceView#.
 
-%description devel -l pl
-Czê¶æ GtkSourceView# przeznaczona dla programistów.
+%description devel -l pl.UTF-8
+CzÄ™Å›Ä‡ GtkSourceView# przeznaczona dla programistÃ³w.
 
 %prep
 %setup -q -n gtksourceview-sharp-2.0-%{version}
