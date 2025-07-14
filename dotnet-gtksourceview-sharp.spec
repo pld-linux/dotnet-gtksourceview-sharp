@@ -53,8 +53,8 @@ Część GtkSourceView# przeznaczona dla programistów.
 
 %prep
 %setup -q -n gtksourceview-sharp-%{version}
-%patch0 -p1
-%patch1 -p1
+%patch -P0 -p1
+%patch -P1 -p1
 sed -i -e 's/`monodoc --get-sourcesdir`/$(DESTDIR)&/' doc/Makefile.am
 sed -i -e 's/apidir = $(DESTDIR)@gtk/apidir = @gtk/' gtksourceview/makefile.am
 
